@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, FlatList, List, ActivityIndicator, StyleSheet, Image } from 'react-native';
+import { Text, View, FlatList, List, ActivityIndicator, StyleSheet, Image,  Linking} from 'react-native';
+import Hyperlink from 'react-native-hyperlink';
 
 
 export default class ViewNews extends React.Component {
@@ -17,12 +18,17 @@ export default class ViewNews extends React.Component {
         <Image style={{width: 80, height: 80, margin: 4}}
         source={{uri: item.urlToImage}} />
         <View style={{flex: 1, justifyContent: 'center'}}>
-            <Text style={{fontSize: 20, color: 'black', marginBottom: 15}}>
+            <Text style={{fontSize: 20, color: 'black', marginBottom: 7}}>
             {item.title}
             </Text>
-            <Text style={{fontSize: 16, color: 'red'}}>
+            <Text style={{fontSize: 16, color: '#2A363B'}}>
             {item.description}
             </Text>
+  <Hyperlink linkDefault={ true }>
+    <Text style={ { fontSize: 15, color: 'blue' } }>
+    {item.url}
+    </Text>
+  </Hyperlink>
         </View>
         </View>
        
@@ -50,7 +56,7 @@ export default class ViewNews extends React.Component {
       <FlatList
         data={this.state.dataSource}
         renderItem={this.renderItem}
-        keyExtractor={({id}, index) => id}
+        keyExtractor={(item, index) => item.key}
    />
       </View>
     );
@@ -63,6 +69,7 @@ export default class ViewNews extends React.Component {
       flex: 1,
       paddingTop: 30,
       backgroundColor: '#fbf9d5',
+      overflow: 'scroll',
      
     },
     imageThumbnail: {

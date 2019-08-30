@@ -8,7 +8,7 @@ const App = createStackNavigator({
     screen: HomeScreen,
     navigationOptions: {
       title: 'NewsApp',
-      headerStyle: { backgroundColor: 'yellow' },
+      headerStyle: { backgroundColor: '#F7DB4F' },
       headerTintColor: 'black',
     },
   },
@@ -16,7 +16,7 @@ const App = createStackNavigator({
     screen: ViewNews,
     navigationOptions: {
       title: 'News',
-      headerStyle: { backgroundColor: 'yellow' },
+      headerStyle: { backgroundColor: '#F7DB4F'},
       headerTintColor: 'black',
     },},
 });

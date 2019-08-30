@@ -13,10 +13,10 @@ export default class HomeScreen extends React.Component {
       <View
         style={{
           flex: 1,
-          backgroundColor: 'black',
+          backgroundColor: '#C8C8A9',
           flexDirection: 'column',
         }}>
-        <Mytext text="News" />
+        <Mytext text='' />
       
         <Mybutton
           title="Find the latest news!"

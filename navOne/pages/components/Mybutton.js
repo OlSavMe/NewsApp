@@ -10,7 +10,7 @@ const Mybutton = props => {
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    backgroundColor: 'yellow',
+    backgroundColor: '#2F9599',
     color: 'black',
     padding: 30,
     marginTop: 190,
@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
     marginRight: 35,
   },
   text: {
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
     fontStyle: 'italic',
-    textShadowRadius: 70,
-    fontSize: 20,
+    textShadowRadius: 80,
+    fontSize: 25,
   },
 });
 export default Mybutton;
