@@ -56,7 +56,7 @@ export default class ViewNews extends React.Component {
       <FlatList
         data={this.state.dataSource}
         renderItem={this.renderItem}
-        keyExtractor={(item, index) => item.key}
+        keyExtractor={item => item.publishedAt}
    />
       </View>
     );
@@ -65,8 +65,8 @@ export default class ViewNews extends React.Component {
  
   const styles = StyleSheet.create({
     container: {
-      justifyContent: 'center',
       flex: 1,
+      justifyContent: 'center',
       paddingTop: 30,
       backgroundColor: '#fbf9d5',
       overflow: 'scroll',
