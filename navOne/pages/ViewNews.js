@@ -15,13 +15,13 @@ export default class ViewNews extends React.Component {
   renderItem = ({ item }) => {
     return (
     <View style={{flex: 1, flexDirection: 'row', marginBottom: 10}}>
-        <Image style={{width: 80, height: 80, margin: 4}}
+        <Image style={{width: 80, height: 80, margin: 2}}
         source={{uri: item.urlToImage}} />
         <View style={{flex: 1, justifyContent: 'center'}}>
-            <Text style={{fontSize: 20, color: 'black', marginBottom: 7}}>
+            <Text style={{fontSize: 16, fontWeight: 'bold', color: 'black', marginBottom: 3}}>
             {item.title}
             </Text>
-            <Text style={{fontSize: 16, color: '#2A363B'}}>
+            <Text style={{fontSize: 14, color: '#2A363B'}}>
             {item.description}
             </Text>
   <Hyperlink linkDefault={ true }>
@@ -33,6 +33,14 @@ export default class ViewNews extends React.Component {
         </View>
        
     );}
+
+    renderSeparator = () => {
+        return (
+            <View
+                style = {{height: 1, width: '100%', backgroundColor: 'black'}}>
+            </View>
+        )
+    }
 
   componentDidMount() {
       return fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=01089335f2c4461dae8920581a769091')
@@ -57,6 +65,7 @@ export default class ViewNews extends React.Component {
         data={this.state.dataSource}
         renderItem={this.renderItem}
         keyExtractor={item => item.publishedAt}
+        ItemSeparatorComponent={this.renderSeparator}
    />
       </View>
     );
