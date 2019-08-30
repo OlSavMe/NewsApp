@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, FlatList, List, ActivityIndicator, StyleSheet, Image,  Linking} from 'react-native';
+import { Text, View, FlatList, StyleSheet, Image} from 'react-native';
 import Hyperlink from 'react-native-hyperlink';
 
 
@@ -81,9 +81,5 @@ export default class ViewNews extends React.Component {
       overflow: 'scroll',
      
     },
-    imageThumbnail: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: 100,
-    },
+   
   });
